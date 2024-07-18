@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Obituary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHhPy5Yjy8Gb71Zir5CIAmfAYH4A_YRxvoLA&s">
+</head>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="date"], textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button i {
+    margin-right: 5px;
+}
+
+button:hover {
+    background: #218838;
+}
+
+
+
+</style>
+<body>
+    <div class="container">
+        <h1>Submit an Obituary</h1>
+        <form action="/form" method="POST" onsubmit="return validateForm()">
+            <label for="name"><i class="fas fa-user"></i> Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="date_of_birth"><i class="fas fa-birthday-cake"></i> Date of Birth</label>
+            <input type="date" id="date_of_birth" name="date_of_birth" required>
+
+            <label for="date_of_death"><i class="fas fa-cross"></i> Date of Death</label>
+            <input type="date" id="date_of_death" name="date_of_death" required>
+
+            <label for="content"><i class="fas fa-file-alt"></i> Content</label>
+            <textarea id="content" name="content" rows="5" required></textarea>
+
+            <label for="author"><i class="fas fa-pen"></i> Author</label>
+            <input type="text" id="author" name="author" required>
+
+
+            <label for="author"><i class="fas fa-pen"></i> slug</label>
+            <input type="text" id="author" name="slug" required>
+
+            <button type="submit"><i class="fas fa-paper-plane"></i> Submit</button>
+        </form>
+    </div>
+
+    <script>
+function validateForm() {
+    var name = document.getElementById('name').value;
+    var dateOfBirth = document.getElementById('date_of_birth').value;
+    var dateOfDeath = document.getElementById('date_of_death').value;
+    var content = document.getElementById('content').value;
+    var author = document.getElementById('author').value;
+
+    if (name == "" || dateOfBirth == "" || dateOfDeath == "" || content == "" || author == "") {
+        alert("All fields must be filled out");
+        return false;
+    }
+
+    return true;
+}
+
+    </script>
+</body>
+</html>

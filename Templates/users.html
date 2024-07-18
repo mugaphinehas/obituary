@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHhPy5Yjy8Gb71Zir5CIAmfAYH4A_YRxvoLA&s">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+</style>
+<title>Obituaries</title>
+</head>
+<body>
+
+<h2>Obituaries</h2>
+
+<table>
+  <thead>
+    
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Date of Birth</th>
+      <th>Date of Death</th>
+      <th>Content</th>
+      <th>Author</th>
+      <th>Submission Date</th>
+      <th>Slug</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for user in userDetails %}
+    <tr>
+      <td>{{ user[0] }}</td>
+      <td>{{ user[1] }}</td>
+      <td>{{ user[2] }}</td>
+      <td>{{ user[3] }}</td>
+      <td>{{ user[4] }}</td>
+      <td>{{ user[5] }}</td>
+      <td>{{ user[6] }}</td>
+      <td>{{ user[7] }}</td>
+    </tr>
+    {% endfor %}
+    <!-- Add more rows as needed -->
+  </tbody>
+</table>
+
+</body>
+</html>
